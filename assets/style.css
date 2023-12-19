@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -10,6 +11,7 @@ header {
     align-items: center;
     color: white;
     height: 90px;
+    padding: 10px;
 }
 
 nav {
@@ -46,14 +48,16 @@ body {
 .portfolio {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .portfolio img {
-    height: 95%;
-    width: 95%;
+    height: 600px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 1300px;
     border-style: inset;
     border-radius: 25px;
-
 }
 
 h2 {
@@ -70,11 +74,93 @@ font-size: 40px
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .small-images img {
+    margin-left: 25px;
     width: 95%;
-    height: 95%;
+    height: 85%;
     border-style: solid;
     border-radius: 25px;
+}
+
+.semantic-overlay, .calculator-overlay, .study-overlay {
+    position: absolute;
+    font-size: 60px;
+    color: white;
+    background-color: #343541;
+}
+
+.semantic-overlay {
+    bottom: 5%;
+    left: 40%;
+}
+
+.calculator-overlay {
+    bottom: 1%;
+    left: 18%;
+
+}
+
+.study-overlay {
+    bottom: 1%;
+    right: 17%;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.contact a {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+#contact {
+    scroll-behavior: auto;
+}
+
+@media (max-width: 768px) {
+    .small-images { 
+        flex-direction: column;
+        width: 90%;
+    }
+    .calculator-overlay {
+    bottom: 51%;
+    left: 36%;
+    }
+
+    .study-overlay {
+        right: 27%;
+    }
+
+    .semantic-overlay {
+        left: 30%;
+    }
+    
+    .portfolio img {
+        width: 700px;
+    }
+}
+
+@media (max-width: 320px) {
+    * {
+        font-size: 11px
+    }
+    .aboutMe {
+        flex-direction: column;
+    }
+    .portfolio img {
+        height: 90%;
+        width: 90%; 
+        margin-left: 17px;
+        margin-top: 5px;
+    }
+    .small-images p, .portfolio p {
+        font-size: 30px;
+    }
 }
